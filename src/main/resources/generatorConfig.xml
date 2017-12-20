@@ -12,7 +12,7 @@
 		<property name="javaFileEncoding" value="utf-8"/>
 		<!-- 集成通用Mapper -->
 		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-			<property name="mappers" value="com.xe.demo.common.dao.MyMapper" />
+			<property name="mappers" value="com.vshell.web.common.dao.MyMapper" />
 		</plugin>
 		<!-- 生成注释 -->
 		<commentGenerator>
@@ -21,11 +21,11 @@
 		<!-- 数据库连接属性 -->
 		<jdbcConnection driverClass="${jdbc.write.driverClassName}" connectionURL="${jdbc.write.url}" userId="${jdbc.write.username}" password="${jdbc.write.password}" />
 		<!-- 生成实体类配置 -->
-		<javaModelGenerator targetPackage="com.xe.demo.model" targetProject="src/main/java" />
+		<javaModelGenerator targetPackage="com.vshell.web.model" targetProject="src/main/java" />
 		<!-- 生成映射文件配置 -->
 		<sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
 		<!-- 生成映射接口配置 -->
-		<javaClientGenerator targetPackage="com.xe.demo.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+		<javaClientGenerator targetPackage="com.vshell.web.mapper" targetProject="src/main/java" type="XMLMAPPER" />
 		
 		<table tableName="%">
 			<!--mysql 配置 -->

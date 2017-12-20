@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xe.demo.mapper.AuthRoleMapper">
-	<resultMap id="BaseResultMap" type="com.xe.demo.model.AuthRole">
+<mapper namespace="com.vshell.web.mapper.AuthRoleMapper">
+	<resultMap id="BaseResultMap" type="com.vshell.web.model.AuthRole">
 		<id column="roleid" jdbcType="TINYINT" property="roleid" />
 		<result column="rolename" jdbcType="VARCHAR" property="rolename" />
 		<result column="cname" jdbcType="VARCHAR" property="cname" />
-		<collection property="operations" ofType="com.xe.demo.model.AuthOperation">
+		<collection property="operations" ofType="com.vshell.web.model.AuthOperation">
 			<id column="opid" jdbcType="INTEGER" property="opid" />
 			<result column="opcode" jdbcType="VARCHAR" property="opcode" />
 			<result column="opname" jdbcType="VARCHAR" property="opname" />
