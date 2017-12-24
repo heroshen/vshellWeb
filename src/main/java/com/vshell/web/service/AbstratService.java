@@ -1,8 +1,7 @@
 package com.vshell.web.service;
 
-import java.util.List;
-import java.util.Map;
-
+import com.github.pagehelper.page.PageMethod;
+import com.vshell.web.common.annotation.ServiceLog;
 import com.vshell.web.common.dao.DaoSupport;
 import com.vshell.web.common.pojo.AjaxResult;
 import com.vshell.web.common.pojo.PageAjax;
@@ -12,11 +11,10 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.github.pagehelper.page.PageMethod;
-import com.vshell.web.common.annotation.ServiceLog;
-
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 通用接口
@@ -201,7 +199,6 @@ public abstract class AbstratService<T> {
     /**
      * 通用批量删除
      * @param str
-     * @param list
      * @return
      */
     public AjaxResult batchDelete(String str, int[] ids) {
@@ -266,7 +263,7 @@ public abstract class AbstratService<T> {
 
 	@ServiceLog("分页查询")
     public PageAjax<T> queryPage(PageAjax<T> page, T entity){
-    	PageMethod.startPage(page.getPageNo(), page.getPageSize());
+    	PageMethod.startPage(page.getPageNo(), page.getPageSize(), page.getSortName()+" "+page.getSortOrder());
     	List<T> list = queryList(entity);
         return new PageAjax<T>(list);
     }

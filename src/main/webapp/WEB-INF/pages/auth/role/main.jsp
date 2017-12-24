@@ -29,7 +29,7 @@
             ],
             cls: "",
             url: _urlPath + "admin/role/queryPage",
-            sort:"id",
+            sort:"roleid",
             order:"desc",
             pagination:true,
             onLoad:function(){

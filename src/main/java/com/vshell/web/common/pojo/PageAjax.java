@@ -1,10 +1,10 @@
 package com.vshell.web.common.pojo;
 
+import com.github.pagehelper.Page;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-
-import com.github.pagehelper.Page;
 
 /**
  * 封装分页请求结果
@@ -20,6 +20,8 @@ public class PageAjax<T> implements Serializable {
     private int size;
     /**排序*/
     private String orderBy;
+    private String sortName;
+    private String sortOrder;
     /**当前页面第一个元素在数据库中的行号*/
     private int startRow;
     /**当前页面最后一个元素在数据库中的行号*/
@@ -353,5 +355,21 @@ public class PageAjax<T> implements Serializable {
         }
         sb.append('}');
         return sb.toString();
+    }
+
+    public String getSortName() {
+        return sortName;
+    }
+
+    public void setSortName(String sortName) {
+        this.sortName = sortName;
+    }
+
+    public String getSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 }

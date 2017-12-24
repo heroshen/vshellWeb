@@ -14,7 +14,7 @@
             ],
             cls: "",
             url: _urlPath + "admin/oper/queryPage",
-            sort:"id",
+            sort:"opid",
             order:"desc",
             pagination:true,
             onLoad:function(){
